@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Fretes</title>
+</head>
+<body>
+    <h1>Relatório de Fretes</h1>
+    @foreach ($fretes as $frete)
+        <div>
+            <p><strong>Cliente:</strong> {{ $frete->cliente }}</p>
+            <p><strong>Peso:</strong> {{ $frete->peso }} kg</p>
+            <p><strong>Distância:</strong> {{ $frete->distancia }} km</p>
+            <p><strong>Tipo:</strong> {{ $frete->tipo }}</p>
+            <p><strong>Valor:</strong> R$ {{ number_format($frete->valor, 2, ',', '.') }}</p>
+            <hr>
+        </div>
+    @endforeach
+</body>
+</html>
